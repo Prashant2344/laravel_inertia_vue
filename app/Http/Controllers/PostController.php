@@ -11,7 +11,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::get();
-        sleep(30);
+        // sleep(3);
         return Inertia('Index',[
             'posts' => $posts
         ]);
