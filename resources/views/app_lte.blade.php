@@ -7,7 +7,7 @@
     @vite('resources/css/app.css')
     @inertiaHead
   </head>
-  <body class="skin-default fixed-layout">
+  <body>
     @inertia
   </body>
 </html>
