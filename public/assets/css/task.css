@@ -1,0 +1,979 @@
+.page-wrapper {
+  min-height: unset !important;
+}
+  .task-click-add-datepicker:hover  input#datepicker {
+        background: #edf1f5;
+  }
+input#datepicker {
+  border: none;
+}
+li.popup-task-click-add.popup-task-click-add-daily {
+  padding : 4px 8px !important;
+}
+li.popup-task-click-add.popup-task-click-add-daily:hover { 
+  background: #f5f5f5 !important;
+}
+li.popup-task-click-add.popup-task-click-add-daily a:hover { 
+  background: none !important;
+}
+.ccs-nepal-dashboard {
+  padding: 10px 0;
+  background: #edf1f5;
+}
+.ccsnepal-leftsidebar {
+  background: #fff;
+  box-shadow: 0 3px 13px -5px rgba(0, 0, 0, 0.4);
+  width: 215px;
+  margin-right: 20px;
+}
+.ccsnepal-leftsidebar ul {
+  padding: 0;
+  margin: 0;
+}
+.ccsnepal-leftsidebar h1 {
+  font-size: 14px;
+    padding: 15px 8px;
+    margin-bottom: 0;
+}
+
+.ccsnepal-leftsidebar ul li {
+  display: block;
+  padding: 8px;
+}
+.ccsnepal-leftsidebar ul li:hover {
+  background: #edf1f5;
+}
+.ccsnepal-leftsidebar ul li:hover a {
+  color: #e37725;
+}
+.ccsnepal-leftsidebar ul li:hover i {
+  color: #e37725;
+}
+.ccsnepal-leftsidebar ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+.ccsnepal-leftsidebar ul li a i {
+  margin-right: 8px;
+  color: #979191;
+}
+.ccsnepal-leftsidebar ul li a i.fa.fa-arrow-right {
+  float: right;
+    font-size: 14px;
+}
+
+.ccs-nepal-dashboard .leftsidebar .right-sidebar {
+  display: flex;
+  width: 100%;
+  position: unset;
+  padding-bottom: 0;
+  background: #edf1f5;
+}
+.right-sidebar .ccsnepal-rightsidebar {
+  background: #fff;
+  box-shadow: 0 3px 13px -5px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 380px;
+  overflow-y: scroll;
+}
+.right-sidebar .ccsnepal-rightsidebar ul {
+  padding: 20px;
+}
+.right-sidebar .ccsnepal-rightsidebar ul h1 {
+      font-size: 18px;
+    padding: 15px 8px;
+    margin-bottom: 0;
+    text-transform: capitalize;
+}
+.right-sidebar .ccsnepal-rightsidebar ul li {
+  display: block;
+  padding: 8px;
+  position: relative;
+  min-height: 52px;
+  border-bottom: solid 1px #f1f1f1;
+}
+.right-sidebar .ccsnepal-rightsidebar ul li:hover {
+    background: #edf1f5;
+    border-bottom: 1px solid #fff;
+}
+.right-sidebar .ccsnepal-rightsidebar ul li .round1 {
+    position: relative;
+    margin-right: 14px;
+    /*visibility: hidden;*/
+    display: none;
+}
+.right-sidebar .ccsnepal-rightsidebar ul li .ccs-round {
+  margin-top: 8px;
+}
+.right-sidebar .ccsnepal-rightsidebar ul li .round1 label {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 16px;
+  left: 0;
+  position: absolute;
+  top: -4px;
+  width: 16px;
+}
+.right-sidebar .ccsnepal-rightsidebar ul li .round1 label:after {
+    border: 2px solid #fff;
+    border-top: none;
+    border-right: none;
+    content: "";
+    height: 6px;
+    left: 4px;
+    opacity: 0;
+    position: absolute;
+    top: 5px;
+  transform: rotate(-45deg);
+  width: 12px;
+}
+.right-sidebar .ccsnepal-rightsidebar ul li .round1 input[type="checkbox"] {
+    visibility: hidden;
+    width: 21px;
+}
+
+.right-sidebar .ccsnepal-rightsidebar ul li .round1 input[type="checkbox"]:checked + label {
+  background-color: #66bb6a;
+  border-color: #66bb6a;
+}
+
+.right-sidebar .ccsnepal-rightsidebar ul li .round1 input[type="checkbox"]:checked + label:after {
+  opacity: 1;
+}
+.right-sidebar .ccsnepal-rightsidebar ul li  {
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+.right-sidebar .ccsnepal-rightsidebar ul li  .icon-star  {
+  float: right;
+}
+.right-sidebar .ccsnepal-rightsidebar ul li  .icon-star:before {
+  display: none;
+}
+.right-sidebar .ccsnepal-rightsidebar ul li  .icon-star i {
+  margin-right: 8px;
+  color: #e37725;
+    font-size: 14px;
+    float: right;
+    margin-top: 14px;
+}
+.right-sidebar .ccsnepal-rightsidebar ul li .ccs-task-part {
+  display: flex;
+    margin-right: 20px;
+}
+.right-sidebar .ccsnepal-rightsidebar ul li  .task-list {
+  display: flex;
+  width: 100%;
+}
+.right-sidebar .ccsnepal-rightsidebar ul li .task-list .icon-pluse1  {
+      margin-top: 4px;
+    margin-right: 24px;
+  }
+.right-sidebar .ccsnepal-rightsidebar ul li  .task-list .icon-pluse1 i {
+  color: #a1a1a1;
+    font-size: 14px;
+}
+.right-sidebar .ccsnepal-rightsidebar ul li  .task-list .text  {
+      /*margin-top: -5px;*/
+}
+.right-sidebar .ccsnepal-rightsidebar ul li  .task-list .text input {
+  border-bottom: 2px solid #8e7d7d;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    /*padding: 6px 8px;*/
+        width: 174px;
+}
+.right-sidebar .ccsnepal-rightsidebar ul li  .task-list .text input:focus {
+  border-bottom: 2px solid #8e7d7d;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
+.forsee {
+  display: none;
+}
+   .right-sidebar .ccsnepal-rightsidebar ul li .sub-task-click-add li img {
+        width: 15px;
+        height: 15px;
+        margin-right: 8px;
+   }
+.right-sidebar .ccsnepal-rightsidebar ul li .checkbox-round {
+    position: relative;
+    margin-right: 14px;
+}
+.right-sidebar .ccsnepal-rightsidebar ul li .checkbox-round label {
+      background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 16px;
+    left: 0;
+    position: absolute;
+    width: 16px;
+}
+.right-sidebar .ccsnepal-rightsidebar ul li .checkbox-round label:after {
+        border: 2px solid #fff;
+    border-top: none;
+    border-right: none;
+    content: "";
+    height: 6px;
+    left: 3px;
+    opacity: 0;
+    position: absolute;
+    top: 3px;
+    transform: rotate(-45deg);
+    width: 9px;
+}
+.right-sidebar .ccsnepal-rightsidebar ul li .checkbox-round input[type="checkbox"] {
+    visibility: hidden;
+    width: 16px;
+}
+
+.right-sidebar .ccsnepal-rightsidebar ul li .checkbox-round input[type="checkbox"]:checked + label {
+  background-color: #66bb6a;
+  border-color: #66bb6a;
+}
+
+.right-sidebar .ccsnepal-rightsidebar ul li .checkbox-round input[type="checkbox"]:checked + label:after {
+  opacity: 1;
+
+}
+/*after class add in task*/
+.edit-task-list {
+  width: 73% !important;
+  height: 726px;
+}
+.ccs-edit-task {
+  display: none;
+}
+
+.right-sidebar .ccs-edit-task {
+    width: 26%;
+    margin-left: 20px;
+    background: #edf1f5;
+    height: 380px;
+    overflow-y: scroll;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input {
+    background: #fff;
+    box-shadow: 0 3px 13px -5px rgba(0, 0, 0, 0.4);
+    margin-bottom: 20px;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul h1 {
+    font-size: 18px;
+    padding: 15px 8px;
+    margin-bottom: 0;
+    text-transform: capitalize;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul {
+    padding: 10px 0;
+    margin: 0;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul  li .text select {
+    width: 199px;
+    border-bottom: 1px solid #8e7d7d;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    margin-left: 34px;
+
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input .addedto-day {
+    height: unset;
+    padding: 0;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input .addedto-day li {
+    padding: 12px 8px;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input .addedto-day li a img {
+    width: 20px;
+    height: 20px;
+    float: left;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input .addedto-day li:hover {
+        background: #edf1f5;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li {
+    display: block;
+    padding: 8px;
+    position: relative;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li .text .btn-secondary {
+    margin-left: 34px;
+    width: 201px;
+    border-radius: 1px;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li .text .btn-secondary:hover {
+    margin-left: 34px;
+    width: 201px;
+    background: red;
+    border: 1px solid red;
+    border-radius: 1px;
+}
+
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li .ccs-round {
+    margin-top: 12px;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li .round2 label {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 16px;
+  left: 0;
+  position: absolute;
+  top: -4px;
+  width: 16px;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li .round2 label:after {
+    border: 2px solid #fff;
+    border-top: none;
+    border-right: none;
+    content: "";
+    height: 6px;
+    left: 4px;
+    opacity: 0;
+    position: absolute;
+    top: 5px;
+    transform: rotate(-45deg);
+    width: 12px;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li .round2 input[type="checkbox"] {
+    visibility: hidden;
+    width: 21px;
+}
+
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li .round2 input[type="checkbox"]:checked + label {
+  background-color: #66bb6a;
+  border-color: #66bb6a;
+}
+
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li .round2 input[type="checkbox"]:checked + label:after {
+  opacity: 1;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li  {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    text-transform: capitalize;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li  .icon-star {
+    float: right;
+}
+.icon-star {
+    cursor: pointer;
+
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li  .icon-star:before  {
+  display: none;
+
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li  .icon-times  {
+    float: right;
+    display: none;
+}
+
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li  .front-icon  {
+    float: left;
+    color: #e37725;
+    margin-right: 8px;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li .front-icon img {
+  width: 30px;
+  border-radius: 50%; 
+  margin-right: 20px;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li:hover   .icon-times {
+    display: block;
+}
+.task-click-add-edit:hover {
+    background: #e8ecf0;
+}
+.task-click-add-edit:hover input#edit-input1-task {
+    background: #e8ecf0;
+}
+input#edit-input1-task {
+    border: none;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li  .icon-star i, .icon-times i {
+    margin-right: 8px;
+    color: #e37725;
+    font-size: 14px;
+    float: right;
+    margin-top: 7px;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li  .css-task-part-edit {
+    display: flex;
+    width: 100%;
+    height: 35px;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li  .task-list {
+    display: flex;
+    width: 100%;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li  .task-list .icon-pluse2  {
+   margin-top: 4px;
+    margin-right: 24px;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li  .task-list .icon-pluse2 i {
+    color: #a1a1a1;
+    font-size: 14px;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li  .task-list .text  {
+        /*margin-top: -5px;*/
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul .task-click-add  #edit-input-task {
+    border: none;
+    width: 166px;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul .task-click-add  #edit-input-task:hover {
+    background: #edf1f5;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li  .task-list .text input {
+    border-bottom: 2px solid #8e7d7d;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    /*padding: 6px 8px;*/
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li  .task-list .text input:focus {
+    border-bottom: 2px solid #8e7d7d;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
+.forsee {
+    display: none;
+}
+
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li .checkbox-round, .checkbox-round-part {
+    position: relative;
+    margin-right: 14px;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li .checkbox-round label, .checkbox-round-part label {
+     background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 16px;
+    left: 0;
+    position: absolute;
+    width: 16px;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li .checkbox-round label:after,  .checkbox-round-part label:after {
+    border: 2px solid #fff;
+    border-top: none;
+    border-right: none;
+    content: "";
+    height: 6px;
+    left: 4px;
+    opacity: 0;
+    position: absolute;
+    top: 5px;
+    transform: rotate(-45deg);
+    width: 12px;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li .checkbox-round input[type="checkbox"] 
+, .checkbox-round-part input[type="checkbox"]{
+    visibility: hidden;
+    width: 16px;
+}
+
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li .checkbox-round input[type="checkbox"]:checked + label, .checkbox-round-part input[type="checkbox"]:checked + label {
+  background-color: #66bb6a;
+  border-color: #66bb6a;
+}
+
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li .checkbox-round input[type="checkbox"]:checked + label:after, .checkbox-round-part input[type="checkbox"]:checked + label:after {
+  opacity: 1;
+}
+.ccs-task-input-part {
+  display: flex;
+}
+  .ccs-task-part-select{
+    margin-right: 20px;
+  } 
+.ccs-task-input-part .ccs-task-part-select .text select {
+    width: 174px;
+    border-bottom: 2px solid #8e7d7d;
+    border-top: none;
+    border-right: none;
+    border-left: none;    
+}
+
+/*after class add in task*/
+.edit-task-list {
+  width: 73% !important;
+}
+.ccs-edit-task {
+  display: none;
+}
+
+.right-sidebar .ccs-edit-task {
+    width: 26%;
+    margin-left: 20px;
+    background: #edf1f5;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input {
+    background: #fff;
+    box-shadow: 0 3px 13px -5px rgba(0, 0, 0, 0.4);
+    margin-bottom: 20px;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul h1 {
+    font-size: 18px;
+    padding: 15px 8px;
+    margin-bottom: 0;
+    text-transform: capitalize;
+    border-bottom: solid 1px #edee;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul {
+    padding: 10px 0;
+    margin: 0;
+    /*height: 152px;*/
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input .addedto-day {
+    height: unset;
+    padding: 0;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input .addedto-day li {
+    padding: 12px 8px;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input .addedto-day li:hover {
+        background: #edf1f5;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input .addedto-day li .image-part h6 {
+     margin-bottom: 0;
+    font-size: 12px;
+    font-weight: 600;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input .addedto-day li .image-part h5 {
+    margin-bottom: 0;
+    font-size: 12px;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li {
+    display: block;
+    padding: 8px;
+    position: relative;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li .round2 {
+    position: relative;
+    margin-right: 14px;
+    /*visibility: hidden;*/
+    display: none;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li .ccs-round {
+    margin-top: 12px;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li .round2 label {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 16px;
+  left: 0;
+  position: absolute;
+  top: -4px;
+  width: 16px;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li .round2 label:after {
+    border: 2px solid #fff;
+    border-top: none;
+    border-right: none;
+    content: "";
+    height: 6px;
+    left: 4px;
+    opacity: 0;
+    position: absolute;
+    top: 5px;
+    transform: rotate(-45deg);
+    width: 12px;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li .round2 input[type="checkbox"] {
+    visibility: hidden;
+    width: 21px;
+}
+
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li .round2 input[type="checkbox"]:checked + label {
+  background-color: #66bb6a;
+  border-color: #66bb6a;
+}
+
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li .round2 input[type="checkbox"]:checked + label:after {
+  opacity: 1;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li  {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    text-transform: capitalize;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li  .icon-star {
+    float: right;
+}
+.icon-star {
+    cursor: pointer;
+
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li  .icon-star:before  {
+  display: none;
+
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li  .icon-times  {
+    float: right;
+    display: none;
+}
+
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li  .front-icon  {
+    float: left;
+    color: #e37725;
+    margin-right: 8px;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li:hover   .icon-times {
+    display: block;
+}
+.task-click-add-edit:hover {
+    background: #e8ecf0;
+}
+.task-click-add-edit:hover input#edit-input1-task {
+    background: #e8ecf0;
+}
+input#edit-input1-task {
+    border: none;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li  .icon-star i, .icon-times i {
+    margin-right: 8px;
+    color: #e37725;
+    font-size: 14px;
+    float: right;
+    margin-top: 7px;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li  .css-task-part-edit {
+    display: flex;
+    width: 100%;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li  .task-list {
+    display: flex;
+    width: 100%;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li  .task-list .icon-pluse2  {
+   margin-top: 4px;
+    margin-right: 24px;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li  .task-list .icon-pluse2 i {
+    color: #a1a1a1;
+    font-size: 14px;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li  .task-list .text  {
+        /*margin-top: -5px;*/
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul .task-click-add  #edit-input-task {
+    border: none;
+    width: 166px;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul .task-click-add  #edit-input-task:hover {
+    background: #edf1f5;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li  .task-list .text input {
+    border-bottom: 2px solid #8e7d7d;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    /*padding: 6px 8px;*/
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li  .task-list .text input:focus {
+    border-bottom: 2px solid #8e7d7d;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
+.forsee {
+    display: none;
+}
+
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li .checkbox-round, .checkbox-round-part {
+    position: relative;
+    margin-right: 14px;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li .checkbox-round label, .checkbox-round-part label {
+     background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 16px;
+    left: 0;
+    position: absolute;
+    width: 16px;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li .checkbox-round label:after,  .checkbox-round-part label:after {
+    border: 2px solid #fff;
+    border-top: none;
+    border-right: none;
+    content: "";
+    height: 6px;
+    left: 3px;
+    opacity: 0;
+    position: absolute;
+    top: 3px;
+    transform: rotate(-45deg);
+    width: 9px;
+}
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li .checkbox-round input[type="checkbox"] 
+, .checkbox-round-part input[type="checkbox"]{
+    visibility: hidden;
+    width: 16px;
+}
+
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li .checkbox-round input[type="checkbox"]:checked + label, .checkbox-round-part input[type="checkbox"]:checked + label {
+  background-color: #66bb6a;
+  border-color: #66bb6a;
+}
+
+.right-sidebar .ccs-edit-task .ccs-edit-input ul li .checkbox-round input[type="checkbox"]:checked + label:after, .checkbox-round-part input[type="checkbox"]:checked + label:after {
+  opacity: 1;
+}
+.ccs-task-input-part {
+  display: flex;
+}
+  .ccs-task-part-select{
+    margin-right: 20px;
+  } 
+.ccs-task-input-part .ccs-task-part-select .text select {
+    width: 174px;
+    border-bottom: 2px solid #8e7d7d;
+    border-top: none;
+    border-right: none;
+    border-left: none;    
+}
+/*/sub-task-click-add/*/
+.right-sidebar .ccsnepal-rightsidebar ul li .sub-task-click-add {
+  padding: 0 40px;
+}
+   .right-sidebar .ccsnepal-rightsidebar ul li .sub-task-click-add li {
+     display: inline;
+     font-size: 12px;
+     padding: 5px;
+     color: #e37725;
+     border-bottom: none;
+   }
+   .right-sidebar .ccsnepal-rightsidebar ul li .sub-task-click-add li i {
+     color: #e37725;
+   }
+   /* Popup container - can be anything you want */
+.afterhover  .addedto-day .task-click-add {
+}
+.afterhover .addedto-day .task-click-add:after {
+   position: absolute;
+   content: '';
+   background: #e0e0e0;
+   width: 241px;
+   height: 1px;
+   right: 0;
+   top: 46px;
+}
+.popup, .popup-daily, .popupdate {
+ position: relative;
+ display: inline-block;
+ cursor: pointer;
+ -webkit-user-select: none;
+ -moz-user-select: none;
+ -ms-user-select: none;
+ user-select: none;
+}
+.popuptext ul, .popuptext-daily ul, .popuptextdate-daily ul, .popuptextsort ul {
+   padding: 0 !important;
+   margin: 0 !important ;
+   height: unset !important;
+}
+.popuptext ul h1, .popuptext-daily ul h1, .popuptextdate-daily ul h1,.popuptextsort ul h1 {
+   font-size: 15px !important;
+   text-transform: capitalize !important;
+   color: #000;
+   margin-bottom: 0 !important;
+   padding: 10px 0 !important;
+   border-bottom: 1px solid #d8d3d3;
+   margin-top: 0 !important;
+}
+.popuptext ul li, .popuptext-daily ul li, .popuptextdate-daily ul h1, .popuptextsort ul h1  {
+   display: block;
+   margin-top: 0 !important;
+   padding: 0 !important;
+}
+/* .task-click-add .show ul .popup-task-click-add a:hover, .popup-task-click-add-date a:hover {
+   background: #f5f5f5 ;
+} */
+.popuptext ul li a {
+   color: #000;
+   font-size: 14px;
+   text-transform: capitalize;
+   text-decoration: none;
+   float: left;
+   padding: 10px 0px;
+}
+.popuptext-daily ul li a, .popuptextdate ul li a, .popuptextsort ul li a {
+  float: unset !important;
+  color: #000;
+   font-size: 14px;
+   text-transform: capitalize;
+   text-decoration: none;
+   padding: 10px 0px;
+}
+.popuptext ul li a i, .popuptext-daily ul li a i, .popuptextdate ul li a i, .popuptextsort ul li a i {
+   float: left;
+   padding: 4px 5px;
+   color: #000;
+   margin-top: 0 !important;
+   font-size: 12px;
+   margin-right: 10px;
+}
+.popuptext ul li a span, .popuptext-daily ul li a span, .popuptextdate ul li a span {
+   float: right;
+   margin-left: 57px;
+   color: #736b6b;
+   padding-right: 16px;
+}
+
+
+/* The actual popup */
+.popup .popuptext, .popup-daily .popuptext-daily, .popuptextdate, .popuptextsort {
+ visibility: hidden;
+   width: 230px;
+   background-color: #eeeeee;
+   color: #fff;
+   text-align: center;
+   position: absolute;
+   z-index: 1;
+   left: 12%;
+   top: 47px;
+   box-shadow: 0px 0px 4px 0px #d6d6d6;
+}
+span.select2-dropdown.select2-dropdown--above {
+    z-index: 99999;
+}
+.chose-file {
+   width: 235px;
+}
+.afterhover textarea {
+   border: none;
+}
+/* Toggle this class - hide and show the popup */
+.popup .show, .popup-daily .show, .popupdate .show, .pull-right .show {
+ visibility: visible;
+ -webkit-animation: fadeIn 1s;
+ animation: fadeIn 1s;
+}
+  .right-sidebar .ccsnepal-rightsidebar ul h1 .pull-right {
+      position: relative;
+      width: 100px;
+    }
+.right-sidebar .ccsnepal-rightsidebar ul h1 .pull-right img {
+   width: 15px;
+   height: 18px;
+   float: left;
+    margin-right: 25px;
+}
+.right-sidebar .ccsnepal-rightsidebar ul h1 .pull-right .main-text {
+  float: left;
+}
+
+.popuptextsort {
+  visibility: hidden;
+   width: 230px;
+   background-color: #eeeeee;
+   color: #fff;
+   text-align: center;
+   position: absolute;
+   z-index: 1;
+   left: -108%;
+   top: 28px;
+   box-shadow: 0px 0px 4px 0px #d6d6d6;
+}
+.pull-right #myPopupsort ul {
+  padding: 0;
+}
+#ccs-task-input-part-sticky {
+  position: sticky;
+  bottom: 0px;
+  background: #fff;
+}
+.pull-right #myPopupsort ul h1 {
+  font-size: 15px !important;
+    text-transform: capitalize !important;
+    color: #000;
+    margin-bottom: 0 !important;
+    padding: 10px 0 !important;
+    border-bottom: 1px solid #d8d3d3;
+    margin-top: 0 !important;
+}
+.pull-right #myPopupsort ul li {
+  text-decoration: none;
+    color: #000;
+    font-size: 16px;
+       min-height: 31px;
+    text-transform: capitalize;
+    border-bottom: none;
+}
+.pull-right #myPopupsort ul li a {
+   color: #000;
+    font-size: 14px;
+    text-transform: capitalize;
+    text-decoration: none;
+    float: left;
+    padding: 10px 0px;
+}
+.pull-right #myPopupsort ul li a i {
+   float: left;
+    padding: 4px 5px;
+    color: #000;
+    margin-top: 0 !important;
+    font-size: 12px;
+    margin-right: 10px;
+}
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+ from {opacity: 0;}
+ to {opacity: 1;}
+}
+@keyframes fadeIn {
+ from {opacity: 0;}
+ to {opacity:1 ;}
+}
+/*for right click menu*/
+/* The whole thing */
+    .custom-menu {
+        display: none;
+        z-index: 99999999;
+        position: absolute;
+        overflow: hidden;
+        border: 1px solid #CCC;
+        white-space: nowrap;
+        font-family: sans-serif;
+        background: #FFF;
+        color: #333;
+        border-radius: 5px;
+        padding: 0;
+            overflow: unset;
+    }
+
+    /* Each of the items in the list */
+    .custom-menu li {
+        padding: 8px 12px;
+        cursor: pointer;
+        list-style-type: none;
+        transition: all .3s ease;
+        user-select: none;
+    }
+
+    .custom-menu li:hover {
+        background-color: #DEF;
+    }
+    /*for right click menu*/
+    .slimScrollDiv {
+      height: 726px;
+    }
