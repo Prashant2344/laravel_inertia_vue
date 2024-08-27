@@ -1,5 +1,6 @@
 <script setup>
 import { Link } from '@inertiajs/vue3';
+import Layout from '../Layouts/Layout.vue';
 
 components: {
     Link
@@ -7,7 +8,10 @@ components: {
 
 </script>
 <template>
-    <Link href="/">Home</Link>
-    <Link href="/posts">Post</Link>
-    <h1>Hello World</h1>
+    <Layout>
+        <!-- <Link href="/">Home</Link>
+        <Link href="/posts">Post</Link> -->
+        <h1>Dashboard</h1>
+    </Layout>
+
 </template>
