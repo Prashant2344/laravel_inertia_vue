@@ -12,8 +12,12 @@ class PostController extends Controller
     {
         $posts = Post::get();
         // sleep(3);
-        return Inertia('Index',[
-            'posts' => $posts
-        ]);
+        // return Inertia('Index',[
+        //     'posts' => $posts
+        // ]);
+        // return Inertia::render('Index', [
+        //     'posts' => $posts
+        // ]);
+        return Inertia::render('Index', compact('posts'));
     }
 }

@@ -15,6 +15,6 @@ import { Link } from '@inertiajs/vue3';
                 <slot></slot>
             </div>
         </div>
-        <Footer></Footer>
+        <!-- <Footer></Footer> -->
     </div>
 </template>
