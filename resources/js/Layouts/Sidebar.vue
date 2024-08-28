@@ -27,7 +27,7 @@ import { Link } from '@inertiajs/vue3';
                     <li> <Link class="waves-effect waves-dark" href="/posts" aria-expanded="false"><i
                                 class="ti-layout-grid2"></i><span class="hide-menu">Post</span></Link>
                     </li>
-                    <li> <Link class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i
+                    <li> <Link class="waves-effect waves-dark" href="/selectdropdown" aria-expanded="false"><i
                                 class="ti-email"></i><span class="hide-menu">Appointment</span></Link>
                     </li>
                     <li> <Link class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i
