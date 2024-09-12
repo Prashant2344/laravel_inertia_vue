@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -14,12 +15,20 @@ use Inertia\Inertia;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/', function () {
-    return Inertia('Home');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/', function () {
+        return Inertia('Home');
+    });
+    Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+    Route::get('/posts', [PostController::class, 'index']);
 });
 
-Route::get('/posts', [PostController::class, 'index']);
 Route::get('/selectdropdown', function(){
     return Inertia::render('SelectDropdown');
+});
+Route::middleware('guest')->group(function () {
+    Route::get('/login', function () {
+        return Inertia::render('auth/Login');
+    })->name('login');
+    Route::post('/login', [LoginController::class, 'login']);
 });

@@ -33,6 +33,9 @@ import { Link } from '@inertiajs/vue3';
                     <li> <Link class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i
                                 class="ti-palette"></i><span class="hide-menu">Profile </span></Link>
                     </li>
+                    <li> <Link class="waves-effect waves-dark" href="/logout" aria-expanded="false"><i class="fa fa-power-off"></i>
+                        <span class="hide-menu">Logout</span></Link>
+                    </li>
                     
                 </ul>
             </nav>
