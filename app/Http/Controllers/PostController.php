@@ -19,7 +19,7 @@ class PostController extends BaseController
         // return Inertia::render('Index', [
         //     'posts' => $posts
         // ]);
-        return Inertia::render('Index', compact('posts'));
+        return Inertia::render('posts/Index', compact('posts'));
     }
 
     public function getPosts() {

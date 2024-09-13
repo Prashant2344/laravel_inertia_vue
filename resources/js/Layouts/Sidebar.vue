@@ -24,8 +24,11 @@ import { Link } from '@inertiajs/vue3';
                     <li> <Link class="waves-effect waves-dark" href="/" aria-expanded="false"><i
                                 class="icon-speedometer"></i><span class="hide-menu">Dashboard </span></Link>
                     </li>
-                    <li> <Link class="waves-effect waves-dark" href="/posts" aria-expanded="false"><i
-                                class="ti-layout-grid2"></i><span class="hide-menu">Post</span></Link>
+                    <li> <Link class="waves-effect waves-dark" href="/workers" aria-expanded="false"><i
+                                class="ti-id-badge"></i><span class="hide-menu">Workers</span></Link>
+                    </li>
+                    <li> <Link class="waves-effect waves-dark" href="/customers" aria-expanded="false"><i
+                                class="ti-user"></i><span class="hide-menu">Customers</span></Link>
                     </li>
                     <li> <Link class="waves-effect waves-dark" href="/selectdropdown" aria-expanded="false"><i
                                 class="ti-email"></i><span class="hide-menu">Appointment</span></Link>

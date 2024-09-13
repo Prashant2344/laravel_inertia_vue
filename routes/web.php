@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\Admin\WorkerController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\PostController;
+use App\Models\Worker;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -21,6 +23,15 @@ Route::middleware(['auth'])->group(function () {
     });
     Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
     Route::get('/posts', [PostController::class, 'index']);
+
+    //workers
+    Route::prefix('workers')->group(function() {
+        Route::name('workers')->group(function() {
+            Route::get('/',[WorkerController::class,'index'])->name('.list');
+            Route::get('/create',[WorkerController::class,'create'])->name('.create');
+            Route::post('/store',[WorkerController::class,'store'])->name('.store');
+        });
+    });
 });
 
 Route::get('/selectdropdown', function(){
