@@ -1,19 +1,38 @@
 <script setup>
 import Layout from '../../Layouts/Layout.vue';
-import { Link,useForm } from '@inertiajs/vue3';
+import { Link,useForm,router } from '@inertiajs/vue3';
 import {reactive} from 'vue';
-import axios from 'axios';
+import { Form, Field } from 'vee-validate';
+import * as yup from 'yup';
 
-const form = useForm({
+const formValues = reactive({
     name:'',
     email:'',
     type:'customer',
     password:''
-})
+});
 
-const handleSubmit = () => {
-    form.post('/workers/store', {
-        onError: () => form.reset('password'),
+const schema = yup.object({
+    name: yup.string().required(),
+    email: yup.string().email().required(),
+    password: yup.string().required().min(8),
+});
+
+const handleSubmit = (values,{setFieldError,setErrors}) => {
+    // form.post('/workers/store', {
+    //     onError: () => form.reset('password'),
+    // });
+
+    router.post('/workers/store', values, {
+        // onFinish: () => setIsFormSubmitting(false),
+        onError: (errors) => {
+            console.log(errors)
+            if(errors) {
+                setErrors(errors);
+            }
+            // setFieldError('email',errors.email);
+        },
+        onSuccess: () => console.log("asdfasdf")
     });
 }
 </script>
@@ -44,7 +63,7 @@ const handleSubmit = () => {
                         <h4 class="m-b-0 text-white">Other Sample form</h4>
                     </div>
                     <div class="card-body">
-                        <form @submit.prevent="handleSubmit">
+                        <Form @submit="handleSubmit" :validation-schema="schema" v-slot="{errors}">
                             <div class="form-body">
                                 <h3 class="card-title">Person Info</h3>
                                 <hr>
@@ -52,18 +71,20 @@ const handleSubmit = () => {
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="control-label">Full Name</label>
-                                            <input type="text" id="fullname" class="form-control"
-                                                placeholder="Fullname" v-model="form.name">
-                                            <small class="form-control-feedback"> {{ form.errors.name }} </small>
+                                            <Field name="name" type="text" id="fullname" class="form-control" :class="{'is-invalid': errors.name}"
+                                                placeholder="Fullname"/>
+                                                <span class="invalid-feedback">{{ errors.name }}</span>
+                                            <!-- <small class="form-control-feedback"> {{ form.errors.name }} </small> -->
                                         </div>
                                     </div>
                                     <!--/span-->
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="control-label">Email</label>
-                                            <input type="text" id="email" class="form-control form-control-danger"
-                                                placeholder="Email" v-model="form.email">
-                                            <small class="form-control-feedback"> {{ form.errors.email }} </small>
+                                            <Field name="email" type="text" id="email" class="form-control form-control-danger" :class="{'is-invalid': errors.email}"
+                                                placeholder="Email"/>
+                                            <span class="invalid-feedback">{{ errors.email }}</span>
+                                            <!-- <small class="form-control-feedback"> {{ form.errors.email }} </small> -->
                                         </div>
                                     </div>
                                     <!--/span-->
@@ -74,11 +95,11 @@ const handleSubmit = () => {
                                         <!-- <div class="form-group has-success"> -->
                                         <div class="form-group">
                                             <label class="control-label">User Type</label>
-                                            <select class="form-control custom-select" v-model="form.type">
+                                            <Field as="select" class="form-control custom-select" name="type">
                                                 <option value="admin">Admin</option>
                                                 <option value="worker">Worker</option>
                                                 <option value="customer">Customer</option>
-                                            </select>
+                                            </Field>
                                             <!-- <small class="form-control-feedback"> Select user type </small> -->
                                         </div>
                                     </div>
@@ -86,22 +107,22 @@ const handleSubmit = () => {
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="control-label">Password</label>
-                                            <input type="password" id="password" class="form-control form-control-danger"
-                                                placeholder="Password" v-model="form.password">
-                                            <small class="form-control-feedback"> {{ form.errors.password }} </small>
+                                            <Field name="password" type="password" id="password" class="form-control form-control-danger"
+                                                placeholder="Password" />
+                                            <!-- <small class="form-control-feedback"> {{ form.errors.password }} </small> -->
                                         </div>
                                     </div>
                                     <!--/span-->
                                 </div>
                             </div>
                             <div class="form-actions">
-                                <button type="submit" class="btn btn-success" :disabled="form.processing">
+                                <button type="submit" class="btn btn-success" :disabled="formValues.processing">
                                     <i class="fa fa-check"></i>
                                     Save
                                 </button>
                                 <button type="button" class="btn btn-inverse">Cancel</button>
                             </div>
-                        </form>
+                        </Form>
                     </div>
                 </div>
             </div>

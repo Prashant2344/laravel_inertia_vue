@@ -26,8 +26,8 @@ class WorkerController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => ['required','max:255'],
-            'email' => ['required','email','max:255'],
+            'name' => ['required','max:2'],
+            'email' => 'required|unique:users,email',
         ]);
 
         User::create([
@@ -38,5 +38,6 @@ class WorkerController extends Controller
         ]);
 
         return redirect()->route('workers.list');
+        // return Inertia::location(route('workers.list'));
     }
 }
