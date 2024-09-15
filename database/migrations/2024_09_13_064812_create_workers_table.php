@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('workers', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id')->default(0);
-            $table->string('service_type')->nullable();
+            $table->json('service_type')->nullable();
             $table->string('address')->nullable();
             $table->string('city')->nullable();
             $table->string('state')->nullable();
