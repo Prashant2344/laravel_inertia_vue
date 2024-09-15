@@ -17,7 +17,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->enum('type', ['admin', 'worker', 'customer'])->default('customer');
+            // $table->enum('type', ['admin', 'worker', 'customer'])->default('customer');
+            $table->json('type')->nullable();
             $table->rememberToken();
             $table->softDeletes();
             $table->timestamps();

@@ -4,6 +4,9 @@ import { Link, useForm, router } from '@inertiajs/vue3';
 import { reactive } from 'vue';
 import { Form, Field } from 'vee-validate';
 import * as yup from 'yup';
+import TextInput from '../../components/form/TextInput.vue';
+import SelectOption from '../../components/form/SelectOption.vue';
+import FileInput from '../../components/form/FileInput.vue';
 
 const formValues = reactive({
     name: '',
@@ -20,7 +23,6 @@ const schema = yup.object({
 });
 
 const handleSubmit = (values, { setFieldError, setErrors }) => {
-    debugger
     console.log(values)
     // form.post('/workers/store', {
     //     onError: () => form.reset('password'),
@@ -38,6 +40,12 @@ const handleSubmit = (values, { setFieldError, setErrors }) => {
         onSuccess: () => console.log("asdfasdf")
     });
 }
+
+const userTypeOptions = [
+    { value: 'admin', text: 'Admin' },
+    { value: 'worker', text: 'Worker' },
+    { value: 'customer', text: 'Customer' }
+];
 </script>
 <template>
     <Layout>
@@ -71,63 +79,19 @@ const handleSubmit = (values, { setFieldError, setErrors }) => {
                                 <h3 class="card-title">Person Info</h3>
                                 <hr>
                                 <div class="row p-t-20">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="control-label">Full Name</label>
-                                            <Field name="name" type="text" id="fullname" class="form-control"
-                                                :class="{ 'is-invalid': errors.name }" placeholder="Fullname" />
-                                            <span class="invalid-feedback">{{ errors.name }}</span>
-                                            <!-- <small class="form-control-feedback"> {{ form.errors.name }} </small> -->
-                                        </div>
-                                    </div>
-                                    <!--/span-->
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="control-label">Email</label>
-                                            <Field name="email" type="text" id="email"
-                                                class="form-control form-control-danger"
-                                                :class="{ 'is-invalid': errors.email }" placeholder="Email" />
-                                            <span class="invalid-feedback">{{ errors.email }}</span>
-                                            <!-- <small class="form-control-feedback"> {{ form.errors.email }} </small> -->
-                                        </div>
-                                    </div>
+                                    <TextInput name="name" :message="errors.name" label="Full Name"/>
+                                    <TextInput name="email" type="email" :message="errors.email" label="Email"/>
+                                </div>
+                                <!--/row-->
+                                <div class="row">
+                                    <SelectOption name="type" :options="userTypeOptions" label="User Type" defaultValue="worker"/>
+                                    <TextInput name="password" type="password" :message="errors.password" label="Password"/>
                                     <!--/span-->
                                 </div>
                                 <!--/row-->
                                 <div class="row">
-                                    <div class="col-md-6">
-                                        <!-- <div class="form-group has-success"> -->
-                                        <div class="form-group">
-                                            <label class="control-label">User Type</label>
-                                            <Field as="select" class="form-control custom-select" name="type">
-                                                <option value="admin">Admin</option>
-                                                <option value="worker">Worker</option>
-                                                <option value="customer">Customer</option>
-                                            </Field>
-                                            <!-- <small class="form-control-feedback"> Select user type </small> -->
-                                        </div>
-                                    </div>
-                                    <!--/span-->
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="control-label">Password</label>
-                                            <Field name="password" type="password" id="password"
-                                                class="form-control form-control-danger" placeholder="Password" />
-                                            <!-- <small class="form-control-feedback"> {{ form.errors.password }} </small> -->
-                                        </div>
-                                    </div>
-                                    <!--/span-->
-                                </div>
-                                <!--/row-->
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <h4 class="card-title">Profile Picture</h4>
-                                                <Field name="profile" type="file" id="input-file-now" class="dropify" />
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <FileInput name="profile" type="file" label="Profile Picture"/>
+                                    
                                     <!--/span-->
 
                                 </div>

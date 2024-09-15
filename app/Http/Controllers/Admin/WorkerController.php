@@ -33,7 +33,7 @@ class WorkerController extends Controller
         $path = $fileStorageType->storeFile($request->file('profile'),$folderPath);
 
         $request->validate([
-            'name' => ['required', 'max:2'],
+            'name' => ['required', 'max:50'],
             'email' => 'required|unique:users,email',
         ]);
 
@@ -61,7 +61,7 @@ class WorkerController extends Controller
         User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'type' => $request->type,
+            'type' => json_encode(['worker' => 'worker']),
             'password' => Hash::make($request->password)
         ]);
 

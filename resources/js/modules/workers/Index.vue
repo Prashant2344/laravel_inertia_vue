@@ -45,8 +45,8 @@ defineProps({
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr v-for="worker in workers">
-                                    <td><a href="javascript:void(0)">Order #26589</a></td>
+                                <tr v-for="(worker,index) in workers" :key="index">
+                                    <td><a href="javascript:void(0)">{{ index+1 }}</a></td>
                                     <td>{{worker.name}}</td>
                                     <td>{{worker.email}} </td>
                                     <td>{{worker.type}}</td>
