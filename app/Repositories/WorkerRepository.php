@@ -1,7 +1,7 @@
 <?php
-namespace App\Reositories;
+namespace App\Repositories;
 
-use App\Reositories\Interfaces\WorkerRepositoryInterface;
+use App\Repositories\Interfaces\WorkerRepositoryInterface;
 
 class WorkerRepository implements WorkerRepositoryInterface{
     

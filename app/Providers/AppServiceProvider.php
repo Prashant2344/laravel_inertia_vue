@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Classes\CloudinaryClass;
+use App\Interfaces\FileStorageType;
 use App\Reositories\Interfaces\UserRepositoryInterface;
 use App\Reositories\Interfaces\WorkerRepositoryInterface;
 use App\Reositories\UserRepository;
@@ -25,5 +27,8 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->bind(UserRepositoryInterface::class,UserRepository::class);
         $this->app->bind(WorkerRepositoryInterface::class,WorkerRepository::class);
+        $this->app->singleton(FileStorageType::class, function($app) {
+            return new CloudinaryClass();
+        });
     }
 }

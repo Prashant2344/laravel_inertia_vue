@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Interfaces\FileStorageType;
 use App\Models\User;
 use App\Models\Worker;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Inertia\Inertia;
 
@@ -23,12 +25,38 @@ class WorkerController extends Controller
         return Inertia::render('workers/Form');
     }
 
-    public function store(Request $request)
+    public function store(Request $request,FileStorageType $fileStorageType)
     {
+        // $path = $request->file('profile')->store('images', 'public');
+        // dd(env('CLOUDINARY_CLOUD_NAME'), env('CLOUDINARY_API_KEY'), env('CLOUDINARY_API_SECRET'));
+        $folderPath = 'workers';
+        $path = $fileStorageType->storeFile($request->file('profile'),$folderPath);
+
         $request->validate([
-            'name' => ['required','max:2'],
+            'name' => ['required', 'max:2'],
             'email' => 'required|unique:users,email',
         ]);
+
+        // DB::transaction(function () use ($request) {
+        //     // Insert into users table and get the user ID
+        //     $userId = DB::table('users')->insertGetId([
+        //         'name' => $request->name,
+        //         'email' => $request->email,
+        //         'type' => $request->type,
+        //         'password' => Hash::make($request->password),
+        //         'created_at' => now(),
+        //         'updated_at' => now(),
+        //     ]);
+
+        //     // Insert into workers table
+        //     DB::table('workers')->insert([
+        //         'user_id' => $userId,
+        //         'address' => $request->address,
+        //         'photo' => $request->photo,
+        //         'created_at' => now(),
+        //         'updated_at' => now(),
+        //     ]);
+        // });
 
         User::create([
             'name' => $request->name,
