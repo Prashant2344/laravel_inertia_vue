@@ -19,12 +19,13 @@ return new class extends Migration
             $table->string('city')->nullable();
             $table->string('state')->nullable();
             $table->string('zip_code')->nullable();
+            $table->string('pan_number')->nullable();
+            $table->json('service_areas')->nullable();
             $table->enum('availability', ['available', 'unavailable'])->default('available');
             $table->enum('status', ['active', 'inactive', 'suspended'])->default('active');
             $table->decimal('rating', 2, 1)->default(0.0);
             $table->integer('reviews_count')->default(0);
             $table->integer('experience_years')->nullable();
-            $table->json('service_areas')->nullable();
             $table->string('specialization')->nullable();
             $table->string('license_number')->nullable();
             $table->json('certifications')->nullable();
@@ -37,7 +38,6 @@ return new class extends Migration
             $table->date('joined_date')->nullable();
             $table->dateTime('last_active_date')->nullable();
             $table->decimal('service_commission', 5, 2)->default(0);
-            $table->string('tax_id')->nullable();
             $table->string('emergency_contact')->nullable();
             $table->json('languages_spoken')->nullable();
             $table->string('service_plan')->nullable();

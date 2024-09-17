@@ -20,6 +20,9 @@ const schema = yup.object({
     name: yup.string().required(),
     email: yup.string().email().required(),
     password: yup.string().required().min(8),
+    phone: yup.string().required().max(10),
+    address: yup.string().required(),
+    work_address: yup.string().required(),
 });
 
 const handleSubmit = (values, { setFieldError, setErrors }) => {
@@ -75,6 +78,7 @@ const userTypeOptions = [
                     </div>
                     <div class="card-body">
                         <Form @submit="handleSubmit" :validation-schema="schema" v-slot="{ errors }">
+                            <input type="hidden" name="_token" :value="csrfToken">
                             <div class="form-body">
                                 <h3 class="card-title">Person Info</h3>
                                 <hr>
@@ -84,16 +88,34 @@ const userTypeOptions = [
                                 </div>
                                 <!--/row-->
                                 <div class="row">
+                                    <TextInput name="phone" type="text" :message="errors.phone" label="Phone"/>
                                     <SelectOption name="type" :options="userTypeOptions" label="User Type" defaultValue="worker"/>
-                                    <TextInput name="password" type="password" :message="errors.password" label="Password"/>
-                                    <!--/span-->
                                 </div>
                                 <!--/row-->
                                 <div class="row">
+                                    <TextInput name="address" type="text" :message="errors.address" label="Address"/>
+                                    <TextInput name="password" type="password" :message="errors.password" label="Password"/>
+                                </div>                                
+                                <!--/row-->
+                                <div class="row">
+                                    <TextInput name="work_address" type="text" :message="errors.work_address" label="Work Address"/>
+                                    <TextInput name="pan_number" type="text" label="Pan Number"/>
+                                </div>
+                                <!--/row-->
+                                <!--/row-->
+                                <div class="row">
+                                    <SelectOption name="skills" :options="userTypeOptions" label="Skills"/>
                                     <FileInput name="profile" type="file" label="Profile Picture"/>
-                                    
-                                    <!--/span-->
-
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h5 class="m-t-30">Multiple select boxes</h5>
+                                        <select class="selectpicker" multiple data-style="form-control btn-secondary">
+                                            <option>Mustard</option>
+                                            <option>Ketchup</option>
+                                            <option>Relish</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-actions">
