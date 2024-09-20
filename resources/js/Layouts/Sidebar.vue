@@ -24,6 +24,12 @@ import { Link } from '@inertiajs/vue3';
                     <li> <Link class="waves-effect waves-dark" href="/" aria-expanded="false"><i
                                 class="icon-speedometer"></i><span class="hide-menu">Dashboard </span></Link>
                     </li>
+                    <li> <Link class="waves-effect waves-dark" href="/services/categories" aria-expanded="false"><i
+                                class="ti-id-badge"></i><span class="hide-menu">Service Category</span></Link>
+                    </li>
+                    <li> <Link class="waves-effect waves-dark" href="/services/types" aria-expanded="false"><i
+                                class="ti-id-badge"></i><span class="hide-menu">Service Type</span></Link>
+                    </li>
                     <li> <Link class="waves-effect waves-dark" href="/workers" aria-expanded="false"><i
                                 class="ti-id-badge"></i><span class="hide-menu">Workers</span></Link>
                     </li>

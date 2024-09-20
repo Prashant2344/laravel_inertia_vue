@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\Admin\ServiceCategoryController;
 use App\Http\Controllers\Admin\WorkerController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\PostController;
 use App\Models\Worker;
+use Cloudinary\Transformation\Rotate;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -17,6 +19,7 @@ use Inertia\Inertia;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
 Route::middleware(['auth'])->group(function () {
     Route::get('/', function () {
         return Inertia('Home');
@@ -25,16 +28,26 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/posts', [PostController::class, 'index']);
 
     //workers
-    Route::prefix('workers')->group(function() {
-        Route::name('workers')->group(function() {
-            Route::get('/',[WorkerController::class,'index'])->name('.list');
-            Route::get('/create',[WorkerController::class,'create'])->name('.create');
-            Route::post('/store',[WorkerController::class,'store'])->name('.store');
+    Route::prefix('workers')->group(function () {
+        Route::name('workers')->group(function () {
+            Route::get('/', [WorkerController::class, 'index'])->name('.list');
+            Route::get('/create', [WorkerController::class, 'create'])->name('.create');
+            Route::post('/store', [WorkerController::class, 'store'])->name('.store');
+        });
+    });
+
+    //Services
+    Route::prefix('services')->group(function () {
+        Route::prefix('categories')->group(function () {
+            Route::name('services.categories')->group(function () {
+                Route::get('/', [ServiceCategoryController::class, 'index'])->name('.list');
+                Route::get('/create', [ServiceCategoryController::class, 'create'])->name('.create');
+            });
         });
     });
 });
 
-Route::get('/selectdropdown', function(){
+Route::get('/selectdropdown', function () {
     return Inertia::render('SelectDropdown');
 });
 Route::middleware('guest')->group(function () {
