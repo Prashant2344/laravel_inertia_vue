@@ -1,19 +1,22 @@
 <script setup>
 import Layout from '../../Layouts/Layout.vue';
 import { Link, useForm, router } from '@inertiajs/vue3';
-import { reactive } from 'vue';
+import { reactive,ref } from 'vue';
 import { Form, Field } from 'vee-validate';
 import * as yup from 'yup';
 import TextInput from '../../components/form/TextInput.vue';
 import SelectOption from '../../components/form/SelectOption.vue';
 import FileInput from '../../components/form/FileInput.vue';
+// Get CSRF token from the meta tag
+const csrfToken = ref(document.querySelector('meta[name="csrf-token"]').getAttribute('content'));
 
 const formValues = reactive({
     name: '',
     email: '',
     type: 'customer',
     profile: '',
-    password: ''
+    password: '',
+    skills:[]
 });
 
 const schema = yup.object({
@@ -23,6 +26,7 @@ const schema = yup.object({
     phone: yup.string().required().max(10),
     address: yup.string().required(),
     work_address: yup.string().required(),
+    skills: yup.array().min(1, "At least one skill is required")
 });
 
 const handleSubmit = (values, { setFieldError, setErrors }) => {
@@ -104,17 +108,17 @@ const userTypeOptions = [
                                 <!--/row-->
                                 <!--/row-->
                                 <div class="row">
-                                    <SelectOption name="skills" :options="userTypeOptions" label="Skills"/>
                                     <FileInput name="profile" type="file" label="Profile Picture"/>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <h5 class="m-t-30">Multiple select boxes</h5>
-                                        <select class="selectpicker" multiple data-style="form-control btn-secondary">
-                                            <option>Mustard</option>
-                                            <option>Ketchup</option>
-                                            <option>Relish</option>
-                                        </select>
+                                        <Field as="select" name="skills" class="selectpicker" multiple data-style="form-control btn-secondary">
+                                            <option value="plumber">Plumber</option>
+                                            <option value="electrician">Electrician</option>
+                                            <option value="cleaner">Cleaner</option>
+                                        </Field>
+                                        <span class="invalid-feedback">{{ errors.skills }}</span>
                                     </div>
                                 </div>
                             </div>
