@@ -41,15 +41,17 @@ defineProps({
                                     <th>S.N</th>
                                     <th>Name</th>
                                     <th>Description</th>
+                                    <th>Parent Category</th>
                                     <th>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr v-for="(category,index) in categories" :key="index">
                                     <td><a href="javascript:void(0)">{{ index+1 }}</a></td>
-                                    <td>{{worker.name}}</td>
-                                    <td>{{worker.description}} </td>
-                                    <td>{{worker.status}}</td>
+                                    <td>{{category.name}}</td>
+                                    <td>{{category.description}} </td>
+                                    <td>{{category.parent_category}} </td>
+                                    <td>{{category.status}}</td>
                                 </tr>
                             </tbody>
                         </table>

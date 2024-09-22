@@ -41,7 +41,9 @@ Route::middleware(['auth'])->group(function () {
         Route::prefix('categories')->group(function () {
             Route::name('services.categories')->group(function () {
                 Route::get('/', [ServiceCategoryController::class, 'index'])->name('.list');
+                Route::get('/getCategories', [ServiceCategoryController::class, 'getCategories'])->name('.getCategories');
                 Route::get('/create', [ServiceCategoryController::class, 'create'])->name('.create');
+                Route::post('/store', [ServiceCategoryController::class, 'store'])->name('.store');
             });
         });
     });

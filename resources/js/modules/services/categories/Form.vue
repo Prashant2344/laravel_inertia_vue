@@ -1,13 +1,17 @@
 <script setup>
 import Layout from '../../../Layouts/Layout.vue';
 import { Link, useForm, router } from '@inertiajs/vue3';
-import { reactive,ref } from 'vue';
+import { reactive,ref,onMounted } from 'vue';
 import { Form, Field } from 'vee-validate';
 import * as yup from 'yup';
 import TextInput from '../../../components/form/TextInput.vue';
+import SelectOption from '../../../components/form/SelectOption.vue';
+import FileInput from '../../../components/form/FileInput.vue';
+import axios from 'axios';
 // Get CSRF token from the meta tag
 const csrfToken = ref(document.querySelector('meta[name="csrf-token"]').getAttribute('content'));
 
+const categoryOptions = ref([{value:0,text:'Parent'}]);
 const formValues = reactive({
     name: '',
     description: '',
@@ -25,7 +29,7 @@ const handleSubmit = (values, { setFieldError, setErrors }) => {
     //     onError: () => form.reset('password'),
     // });
 
-    router.post('/workers/store', values, {
+    router.post('/services/categories/store', values, {
         // onFinish: () => setIsFormSubmitting(false),
         onError: (errors) => {
             console.log(errors)
@@ -38,6 +42,30 @@ const handleSubmit = (values, { setFieldError, setErrors }) => {
     });
 }
 
+const getCategories = () => {
+    axios.get('/services/categories/getCategories')
+    .then((response)=>{
+        categoryOptions.value = [
+            ...categoryOptions.value,
+            ...response.data.map((category) => {
+            return {
+                value: category.id,
+                text: category.name
+            }
+        })];
+    }).catch((error) => {
+        console.error("Error fetching categories:", error);
+    });
+}
+
+onMounted(() => {
+    getCategories();
+});
+
+const statusOptions = [
+    { value: 'active', text: 'Active' },
+    { value: 'disable', text: 'Disable' }
+];
 </script>
 <template>
     <Layout>
@@ -69,15 +97,20 @@ const handleSubmit = (values, { setFieldError, setErrors }) => {
                         <Form @submit="handleSubmit" :validation-schema="schema" v-slot="{ errors }">
                             <input type="hidden" name="_token" :value="csrfToken">
                             <div class="form-body">
-                                <h3 class="card-title">Person Info</h3>
+                                <!-- <h3 class="card-title">Person Info</h3> -->
                                 <hr>
-                                <div class="row p-t-20">
+                                <div class="row">
                                     <TextInput name="name" :message="errors.name" label="Category Name"/>
-                                    <TextInput name="status" type="text" label="Status"/>
+                                    <SelectOption name="category_id" :options="categoryOptions" label="Parent Category" defaultValue="0"/>
                                 </div>
                                 <!--/row-->
                                 <div class="row">
+                                    <SelectOption name="status" :options="statusOptions" label="Status" defaultValue="active"/>
                                     <TextInput name="description" type="text" :message="errors.description" label="Description"/>
+                                </div>
+                                <!--/row-->
+                                <div class="row">
+                                    <FileInput name="icon" type="file" label="Category Icon"/>
                                 </div>
                             </div>
                             <div class="form-actions">
