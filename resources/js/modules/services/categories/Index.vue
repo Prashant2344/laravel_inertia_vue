@@ -43,6 +43,7 @@ defineProps({
                                     <th>Description</th>
                                     <th>Parent Category</th>
                                     <th>Status</th>
+                                    <th class="text-nowrap">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -52,6 +53,10 @@ defineProps({
                                     <td>{{category.description}} </td>
                                     <td>{{category.parent_category}} </td>
                                     <td>{{category.status}}</td>
+                                    <td class="text-nowrap">
+                                        <Link :href="`/services/categories/${category.id}/edit`" data-toggle="tooltip" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </Link>
+                                        <a href="javascript:void(0)" data-toggle="tooltip" data-original-title="Close"> <i class="fa fa-close text-danger"></i> </a>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>

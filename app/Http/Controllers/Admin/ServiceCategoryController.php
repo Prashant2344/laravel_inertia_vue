@@ -21,7 +21,7 @@ class ServiceCategoryController extends Controller
         //     ->select('child.id', 'child.name','child.description','child.status', 'parent.name as parent_category')
         //     ->get();
 
-        $categories = ServiceCategory::with('parent:id,name')
+        $categories = ServiceCategory::orderBy('id')->with('parent:id,name')
             ->get()
             ->map(function ($category) {
                 return [
@@ -49,6 +49,10 @@ class ServiceCategoryController extends Controller
 
     public function store(Request $request,FileStorageType $fileStorageType)
     {
+        $request->validate([
+            'name' => ['required', 'max:50'],
+        ]);
+
         $path = null;
         if($request->file('icon')) {
             $folderPath = 'servicecategories';
@@ -60,10 +64,42 @@ class ServiceCategoryController extends Controller
             'category_id' => $request->category_id,
             'slug' => Str::slug($request->name, '-'),
             'description' => $request->description,
+            'status' => $request->status,
             'icon' => $path,
         ]);
 
         return redirect()->route('services.categories.list');
+    }
 
+    public function edit($id)
+    {
+        $category = ServiceCategory::findOrFail($id);
+        return Inertia::render('services/categories/Form',compact('category'));
+    }
+
+    public function update(Request $request,FileStorageType $fileStorageType,$id)
+    {
+        $request->validate([
+            'name' => ['required', 'max:50'],
+        ]);
+        
+        $serviceCategory = ServiceCategory::findOrFail($id);
+
+        $path = null;
+        if($request->file('icon')) {
+            $folderPath = 'servicecategories';
+            $path = $fileStorageType->storeFile($request->file('icon'),$folderPath);
+        }
+
+        $serviceCategory->update([
+            'name' => $request->name,
+            'category_id' => $request->category_id,
+            'slug' => Str::slug($request->name, '-'),
+            'description' => $request->description,
+            'status' => $request->status,
+            'icon' => $path,
+        ]);
+
+        return redirect()->route('services.categories.list');
     }
 }

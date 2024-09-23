@@ -16,7 +16,10 @@ defineProps({
         type: String,
         default: 'text'
     },
-    message: String
+    message: String,
+    textValue: {
+        type: String
+    }
 })
 </script>
 
@@ -24,7 +27,7 @@ defineProps({
     <div class="col-md-6">
         <div class="form-group">
             <label class="control-label">{{ label }}</label>
-            <Field :name="name" :type="type" :id="name" class="form-control" :class="{ 'is-invalid': message }"
+            <Field :name="name" :type="type" :id="name" class="form-control" :class="{ 'is-invalid': message }" :value="textValue"
                 :placeholder=label />
             <span class="invalid-feedback">{{ message }}</span>
             <!-- <small class="form-control-feedback"> {{ form.errors.name }} </small> -->

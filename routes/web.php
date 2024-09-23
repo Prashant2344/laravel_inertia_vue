@@ -44,6 +44,8 @@ Route::middleware(['auth'])->group(function () {
                 Route::get('/getCategories', [ServiceCategoryController::class, 'getCategories'])->name('.getCategories');
                 Route::get('/create', [ServiceCategoryController::class, 'create'])->name('.create');
                 Route::post('/store', [ServiceCategoryController::class, 'store'])->name('.store');
+                Route::get('/{id}/edit', [ServiceCategoryController::class, 'edit'])->name('.edit');
+                Route::post('/{id}/update', [ServiceCategoryController::class, 'update'])->name('.update');
             });
         });
     });
